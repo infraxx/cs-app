@@ -1,4 +1,4 @@
-package org.infraxx.tests.cs.adt;
+package org.infraxx.tests.cs.diff;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -42,7 +42,7 @@ public class Fibonacci {
         System.out.println(Fibonacci.fibonacciLoop(5));
         System.out.println(Fibonacci.fibonacciLoop(6));
         System.out.println(Fibonacci.fibonacciLoop(7));
-        System.out.println(Fibonacci.fibonacciLoop(10000000));
+        System.out.println(Fibonacci.fibonacciLoop(10000));
 
         System.out.println("-------");
 
@@ -52,5 +52,6 @@ public class Fibonacci {
         System.out.println(Fibonacci.fibonacci(3));
         System.out.println(Fibonacci.fibonacci(4));
         System.out.println(Fibonacci.fibonacci(5));
+        System.out.println(Fibonacci.fibonacci(10000));
     }
 }
