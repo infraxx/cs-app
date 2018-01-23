@@ -7,6 +7,33 @@ import java.util.logging.Logger;
 public class StringsDiff {
     private static Logger LOGGER = Logger.getLogger(StringsDiff.class.getName());
 
+    // Palindrome
+    public static boolean isPalRec(String input) {
+        if (input.length() == 0 || input.length() == 1) {
+            return true;
+        }
+
+        if (input.charAt(0) == input.charAt(input.length() - 1)) {
+            return isPalRec(input.substring(1, input.length() - 1));
+        }
+
+        return false;
+    }
+
+    public static boolean isPalLoop(String input) {
+        if (input.length() == 0 || input.length() == 1) {
+            return true;
+        }
+
+        for (int i = 0; i < input.length()/2; i++) {
+            if (input.charAt(i) != input.charAt(input.length() - 1 -i )) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     //    Write a program to find out duplicate or repeated characters in a
 //    string, and calculate the count of repeatation.
 
@@ -43,6 +70,22 @@ public class StringsDiff {
     }
 
     public static void main(String[] args) {
-        permutations("test");
+        //permutations("test");
+
+        System.out.println(isPalRec(""));
+        System.out.println(isPalRec("a"));
+        System.out.println(isPalRec("aa"));
+        System.out.println(isPalRec("aaa"));
+        System.out.println(isPalRec("aab"));
+        System.out.println(isPalRec("bab"));
+        System.out.println(isPalRec("aab baa"));
+
+        System.out.println(isPalLoop(""));
+        System.out.println(isPalLoop("a"));
+        System.out.println(isPalLoop("aa"));
+        System.out.println(isPalLoop("aaa"));
+        System.out.println(isPalLoop("aab"));
+        System.out.println(isPalLoop("bab"));
+        System.out.println(isPalLoop("aab baa"));
     }
 }
